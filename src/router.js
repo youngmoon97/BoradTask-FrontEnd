@@ -2,10 +2,10 @@
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import PageHome from './components/PageHome'
 import BoardList from './components/BoardList'
 import BoardInsert from './components/BoardInsert'
 import BoardDetail from './components/BoardDetail'
+import BoardUpdate from './components/BoardUpdate'
 
 Vue.use(VueRouter) // vue 에서 vue router 를 사용하기 위해 알려줘야합니다.
 
@@ -14,15 +14,23 @@ export const router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: BoardList
+      component: BoardList,
+      name: 'BoardList'
+    },
+    {
+      path: '/boardupdate',
+      component: BoardUpdate,
+      name: 'BoardUpdate'
     },
     {
       path: '/boardinsert',
-      component: BoardInsert
+      component: BoardInsert,
+      name: 'BoardInsert'
     },
     {
       path: '/boarddetail',
-      component: BoardDetail
+      component: BoardDetail,
+      name: 'BoardDetail'
     }
   ] // path 별 component 를 추가합니다.
 })
